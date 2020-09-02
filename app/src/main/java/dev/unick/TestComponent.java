@@ -6,19 +6,25 @@ import dagger.Component;
 import dagger.Module;
 import dagger.Provides;
 
+@Singleton
 @Component(
-        modules = {JavaModule.class, TestModule.class})
+        modules = {
+                JavaModule.class,
+                TestModule.class
+        }
+)
 public interface TestComponent {
 
     IA a();
+
     String str();
 }
 
 @Module()
-class JavaModule{
+class JavaModule {
 
     @Provides
-    String str(){
+    String str() {
         return "test";
     }
 }
